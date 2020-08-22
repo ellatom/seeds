@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Ella Ginzburg</title>
+</head>
+
+<body id="home">
+  <header class="home__page">
+    <div id="navbar" class="navbar top">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fab fa-earlybirds"></i> Ella </span>Ginzburg
+      </h1>
+      <nav>
+        <ul>   
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="home__content">
+      <h1>Welcome</h1>
+      <p>to my protfolio</p>
+      <a href="#about" class="btn"><i class="fas fa-chevron-right"></i> Read More</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- About: Icons -->
+    <section id="about" class="icons bg-light">
+      <div class="flex-items">
+      </div>
+    </section>
+    <!-- About:Solutions -->
+    <section class="cv-page">
+      <div class="flex-container">
+        <div class="left-side">
+          <div class="details_container">
+            <div class="my_photo">
+              <img src="../edgeledger_website/images/Ella.png" alt=""></img>
+            </div>
+            <ul class="details">
+              <li><i class="fas fa-certificate"></i>&nbsp;Ella Ginzburg</li>
+              <li><i class="fas fa-suitcase"></i>&nbsp;Full Stack Developer</span></li>
+              <li><i class="fas fa-home"></i>&nbsp;Kfar-Saba, Israel</li>
+              <li><i class="fas fa-envelope"></i>&nbsp;ella271@gmail.com</li>
+            </ul>
+            <hr>
+          </div>
+          <ul class="skills">
+            <li><i class="fas fa-star-of-life"></i>&nbsp;<span>Skills</span></li>
+            <li>Python
+              <div class="skills__meter"><span id="meter_python"></span></div>
+            </li>
+            <li>Java
+              <div class="skills__meter"><span id="meter_java"></span></div>
+            </li>
+            <li>NODE JS
+              <div class="skills__meter"><span id="meter_nodejs"></span></div>
+            </li>
+            <li>HTML&CSS
+              <div class="skills__meter"><span id="meter_html"></span></div>
+            </li>
+            <li>SQL&Mongo DB
+              <div class="skills__meter"><span id="meter_db"></span></div>
+            </li>
+          </ul>
+          <hr>
+
+        </div>
+        <div class="right-side">
+          <ul class="right-side__education">
+            <li><i class="fas fa-university"></i>&nbsp;<span>Education</span></li>
+            <li class="bootcamp"><i class="fas fa-calendar-week"></i> 2020 <br>Bootcamp Appleseeds Full Stack Developer
+            </li>
+            <hr>
+
+            <li class="right-side__second_degree"><i class="fas fa-calendar-week"></i> 2011-2013 <br>MA Logistics in Statistics
+              Department, University of Haifa</li>
+            <hr>
+
+            <li class="right-side__first_degree"><i class="fas fa-calendar-week"></i> 2007-2011 <br> BSc Information Systems,
+              University of Haifa</li>
+          </ul>
+          <ul class="right-side__languages">
+            <li><i class="fas fa-globe-americas"></i>&nbsp; <span>Languages</span></li>
+            <li>Hebrew</li><hr>
+            <li>English</li><hr>
+            <li>Russian</li><hr>
+          </ul>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script>
+      const navbar = document.getElementById('navbar');
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove('top');
+          if (!scrolled) {
+            navbar.style.transform = 'translateY(-70px)';
+          }
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add('top');
+          scrolled = false;
+        }
+      };
+
+      // Smooth Scrolling
+      $('#navbar a, .btn').on('click', function (e) {
+        // debugger;
+        if (this.hash !== '') {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+
+        document.getElementById("meter_python").className = "progress_python";
+        document.getElementById("meter_java").className = "progress_java";
+        document.getElementById("meter_nodejs").className = "progress_nodejs";
+        document.getElementById("meter_html").className = "progress_html";
+        document.getElementById("meter_db").className = "progress_db";
+        // document.getElementsByClassName("right-side").className="right_side_flow";
+
+      });      
+    </script>
+</body>
+
+</html>

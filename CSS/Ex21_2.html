@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        background-color: yellow;
+        }
+
+        .box1,.box2,.box3,.box4,.box5 {
+            text-decoration: none;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            width:80px;
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+            color: black;
+            margin: 10px 10px;
+        }
+        
+        a.box1:before, a.box1:after,
+        a.box2:before, a.box2:after,
+        a.box3:before, a.box3:after,
+        a.box4:before, a.box4:after,
+        a.box5:before, a.box5:after
+        {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: black;
+            transition: all 0.5s;
+        }
+
+        a.box1::before,
+        a.box2::before,
+        a.box3::before,
+        a.box4::before,
+        a.box5::before
+        {
+            left: 0px;
+            top: 0px;
+        }
+
+        a.box1:after,
+        a.box2:after,
+        a.box3:after,
+        a.box4:after,
+        a.box5:after
+        {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        a.box1:hover::before, a.box1:hover::after,
+        a.box2:hover::before, a.box2:hover::after,
+        a.box3:hover::before, a.box3:hover::after,
+        a.box4:hover::before, a.box4:hover::after,
+        a.box5:hover::before, a.box5:hover::after
+        {
+            opacity: 1;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>  
+        <a class="box1" href="#">home</a>
+        <a class="box2" href="#">about</a>
+        <a class="box3" href="#">services</a>
+        <a class="box4" href="#">protfolio</a>
+        <a class="box5" href="#">contact</a>
+    
+    </div>
+</body>
+</html>

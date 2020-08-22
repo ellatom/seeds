@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+        position: relative;
+        display: inline-block;
+        }
+        a::after,
+        a::before {
+        position: absolute;
+        display: none;
+        }
+        a::before {
+        content: "";
+        top: -2px;
+        left: 6px;
+        /*creates triangle*/
+        height: 0px;
+        width: 0px;
+        border-left: 5px solid transparent;
+        border-top: 5px solid #ffe4b5;
+        border-right: 5px solid transparent;
+        }
+        a::after {
+        content: attr(data-tooltip);
+        top: -35px;
+        left: -10px;
+        background: yellow;
+        border-radius: 20px;
+        padding:6px 6px;
+        white-space: nowrap;/*in case the text is long not wrapping to next line*/
+        color: blue;
+        }
+        a:hover::after,
+        a:hover::before {
+        display: block;
+        }
+
+        *{
+        font-family: Calibri;
+        }
+        .wrapper {
+        margin: 25px;
+        }
+
+
+</style>
+</head>
+<body>
+    <div class='wrapper'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusamus nihil molestias repellendus sit reprehenderit, molestiae, quasi commodi et culpa laudantium ullam modi mollitia odit delectus! Reiciendis error veritatis neque!
+        Et dignissimos dicta aliquam <a href='#' data-tooltip='My cool tooltip'>click on me</a> nostrum repellat ex eum, numquam accusamus itaque quae? Quam eius officia minus ipsa sunt, numquam magni, at obcaecati nulla nostrum, a nobis! Tenetur velit delectus sed.
+        Consequuntur eius porro eligendi a tempore iure corrupti, natus ab voluptatem quis blanditiis, omnis libero nisi amet officiis non voluptatibus nam aperiam numquam? Rem amet laborum dolor, quo at sequi?
+        Fugit expedita accusantium cumque tempore vitae quo iure eum dolorum culpa officia. Rem, nemo, veniam explicabo sed eius ad perspiciatis vel, blanditiis adipisci quaerat eos ab porro!<a href='#' data-tooltip='My cool tooltip'>click on me</a> Eligendi, corporis veritatis?
+        Impedit minus quidem soluta maiores, nobis cumque velit amet reiciendis dolores, autem, reprehenderit consequatur? Fuga distinctio minus aliquam voluptate tenetur nam excepturi iure facilis? Consectetur iste corporis ipsam alias ab. inside it.inside it.
+        <br />Some more text blah blah with some  inside it</div>
+      </div>
+      <div class='wrapper'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusamus nihil molestias repellendus sit reprehenderit, molestiae, quasi commodi et culpa laudantium ullam modi mollitia odit delectus! Reiciendis error veritatis neque!
+        Et dignissimos dicta aliquam <a href='#' data-tooltip='Tooltip'>link</a> nostrum repellat ex eum, numquam accusamus itaque quae? Quam eius officia minus ipsa sunt, numquam magni, at obcaecati nulla nostrum, a nobis! Tenetur velit delectus sed.
+        Consequuntur eius porro eligendi a tempore iure corrupti, natus ab voluptatem quis blanditiis, omnis libero nisi amet officiis non voluptatibus nam aperiam numquam? Rem amet laborum dolor, quo at sequi?
+        Fugit expedita accusantium cumque tempore vitae quo iure eum dolorum culpa officia. Rem, nemo, veniam explicabo sed eius ad perspiciatis vel, blanditiis adipisci quaerat eos ab porro!<a href='#' data-tooltip='Long Tooltip'>link</a> Eligendi, corporis veritatis?
+        Impedit minus quidem soluta maiores, nobis cumque velit amet reiciendis dolores, autem, reprehenderit consequatur? Fuga distinctio minus aliquam voluptate tenetur nam excepturi iure facilis? Consectetur iste corporis ipsam alias ab. inside it.inside it.
+        <br />Some more text blah blah with some  inside it</div>
+      </div>
+
+</body>
+</html>

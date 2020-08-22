@@ -1,0 +1,22 @@
+.a{
+    font-family: monospace;
+    display: inline-block;
+    width: 300px;
+    border: 1px solid black;
+    background-color: lavender;
+    padding: 20px;
+    font-size: medium;
+    }
+.b{
+    font-family: monospace;
+}
+.c{
+    font-family: monospace;
+    color:teal;
+}
+.d{
+    font-family: monospace;
+}
+.e{
+    font-family: monospace;
+}

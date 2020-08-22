@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after{
+            padding:0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+        
+        .page1{
+            display: flex;
+            background-color: grey;
+            height: 100vh;
+            position: relative;
+        }
+        .page1__cookie-banner {
+        position: fixed;
+        height:30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: red;
+        }
+        .page1__cookie-banner--text{
+            line-height: 30px;
+            justify-content: center;
+        }
+        .close {
+        margin-right: 20px;
+        padding-left:10px;
+        padding-right:10px;
+        height: 30px;
+        justify-content: flex-end;
+        background-color: rgb(116, 6, 6);
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        }  
+        .page2{
+            display:grid;
+            height: 100vh;
+            background-color: grey;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: repeat(10,1fr);
+            /* position: relative; */
+        }
+        .page2__container{
+            grid-column:8/ span 3;
+            grid-row:8/span 3;
+            /* position: fixed; */
+        }
+
+        .page2__container__cookie-banner{ 
+        padding: 20px 20px;
+        background-color: rgb(75, 68, 68);grid-column:8/ span 3;
+            grid-row:8/span 3;
+        border-radius: 40px;
+        font-size: 1rem;
+        line-height: 40px;
+        color:white;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        }
+        .ok {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        height: 20%;
+        width: 100%;
+        background-color:  rgb(75, 68, 68);
+        border:3px solid white;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        } 
+        .page3{
+            display:grid;
+            height: 100vh;
+            background-color: white;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: repeat(10,1fr);
+        }
+        .a{
+            grid-column:1/ span 3;
+            grid-row:9/span 2;
+            background-color: black;
+            color: white;
+            padding: 20px 20px;
+            margin-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .page3__cookie-banner {
+
+        padding: 20px 20px;
+        grid-column:1/ span 3;
+        grid-row:8/span 3;
+        background-color: black;
+        font-size: 1rem;
+        color:white;
+        }
+        .ok {
+        margin-top: 20px;
+        display: block;
+        text-align: end;
+        text-decoration: none;
+        height: 20%;
+        width: 100%;
+        background-color: black;
+        color: orange;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="page1">
+        <div class="page1__cookie-banner">
+            <span class="page1__cookie-banner--text">
+                This website uses cookies to give you an incredible experience. By using this website you agree to the 
+                <a href="#">terms</a>
+            </span>
+            <button class="close">X</button>
+        </div>
+    </div> 
+    <div class="page2">
+        <div class="page2__container">
+        <div class="page2__container__cookie-banner">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facere 
+                qui ducimus nesciunt.
+                <a href="#" class="ok">ok</a>
+        </div>
+    </div>
+    </div> 
+    <div class="page3">
+        <div class="a">
+        <div class="page2__cookie-banner">
+                This website cookies to provide you with
+                a great user experience.By using it, you
+                accept our <a href="#">use of cookies</a>
+                <a href="#" class="ok">OKAY</a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

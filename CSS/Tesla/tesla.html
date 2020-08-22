@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model 3 | Tesla</title>
+    <link rel="stylesheet" href="../Tesla/css_.css">
+    <script src="https://kit.fontawesome.com/51d26f6163.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .main {
+            background: no-repeat center center/cover;
+            background-image: url('../Tesla/car.jpg');
+            height: 100vh;
+            width: 100vw;
+            color: white;
+        }
+
+        .main3 {
+            background: no-repeat center center/cover;
+            background-color: #F4F4F4;
+            background-image: url('../Tesla/model-3-hero2.png');
+            height: 100vh;
+            width: 75%;
+            color: white;
+            padding: 5px 5px;
+            vertical-align: middle;
+            float:right;
+            position:relative;
+        }
+        .side2{
+            height: 100vh;
+            width: 25%;
+            float:left;
+            margin-left: 20px;
+            box-sizing: border-box;
+        }
+        .container
+        {
+            display: inline-block;
+            background-color: white;
+        }
+        
+
+        .navbar {
+            display: inline-block;
+            padding: 20px 20px;
+            overflow: auto;
+        }
+
+        .header_center :hover {
+            cursor: pointer;
+        }
+
+        .header_center {
+            display: inline-block;
+            padding: 5px 20px 20px 250px;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+
+        }
+
+        .model_s {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px 2px 2px;
+            text-align: center;
+        }
+
+        .model_3 {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .model_x {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .model_y {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .solar_roof {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .solar_panels {
+
+            display: inline-block;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+        .right-navigation:hover {
+            cursor: pointer;
+        }
+
+        .right-navigation {
+            position: relative;
+            float: right;
+            padding: 10px 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .shop {
+            float: right;
+            color: white;
+            padding: 21px 21px;
+        }
+
+        .sign_in {
+            float: right;
+            padding: 21px 21px;
+        }
+
+        .hamburger {
+            float: right;
+            color: white;
+            padding: 17px 21px;
+            width: auto;
+            height: auto;
+        }
+
+        .logo :hover {
+            cursor: pointer;
+        }
+
+        .logo {
+            display: inline-block;
+            padding: 15px 10px;
+
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            padding: 40px 20px;
+            display: block;
+            text-align: center;
+        }
+        .side_bar{
+            display: block;
+            margin-top: 70px;
+        }
+
+        .side_bar>.Model3{
+            display: block;
+            border-right-style: RIDGE;
+            border-color: white;
+            height: 20px;
+            width: 1px;
+            padding-left: 20px;
+        }
+        .side_bar>.Safety,
+        .side_bar>.Performance,
+        .side_bar>.All-WheelDrive,
+        .side_bar>.Range,
+        .side_bar>.AutoPilot,
+        .side_bar>.Interior,
+        .side_bar>.Specs,
+        .side_bar>.Order {
+            display: block;
+            border-right-style: ridge;
+            border-color: rgb(126, 119, 119);
+            height: 20px;
+            width: 1px;
+            padding-left: 20px;
+            margin-top: 5px;
+
+        }
+
+        /* <li class="Model3"><a class="current"></a></li><br> */
+        /* .sidebar ul li a.current {
+            border-color: white;
+        } */
+
+        .Model3,
+        .Safety,
+        .Performance,
+        .All-WheelDrive,
+        .Range,
+        .AutoPilot,
+        .Interior,
+        .Specs,.All-WheelDrive
+        .order {
+        position: relative;
+        display: inline-block;
+        }
+
+
+        .Model3 .model3_tooltiptext,
+        .Safety .safety_tooltiptext, 
+        .Performance .performance_tooltiptext,
+        .All-WheelDrive .allwheeldrive_tooltiptext,
+        .Range .range_tooltiptext,
+        .AutoPilot .autopilot_tooltiptext,
+        .Interior .interior_tooltiptext,
+        .Specs .specs_tooltiptext,
+        .order .order_tooltiptext{
+        visibility: hidden;
+        width: 120px;
+        
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: right;
+        z-index: 1;
+        }
+
+        .Model3:hover .model3_tooltiptext, 
+        .Safety:hover .safety_tooltiptext, 
+        .Performance:hover .performance_tooltiptext,
+        .All-WheelDrive:hover .allwheeldrive_tooltiptext,
+        .Range:hover .range_tooltiptext,
+        .AutoPilot:hover .autopilot_tooltiptext,
+        .Interior:hover .interior_tooltiptext,
+        .Specs:hover .specs_tooltiptext,
+        .order:hover .order_tooltiptext{
+        visibility: visible;
+        font-size: 13px;
+        padding-left: 20px;
+        margin-right: 40px;
+        font-weight: bold;
+        text-align: center;
+        }
+
+        .Model3:hover,
+        .Safety:hover,
+        .Performance :hover,
+        .All-WheelDrive :hover,
+        .Range :hover,
+        .AutoPilot :hover,
+        .Interior:hover,
+        .Specs:hover,
+        .order:hover
+         {
+            cursor: pointer;
+        }
+
+        .lower_header {
+            display: block;
+            text-align: center;
+            bottom:-250px;
+            padding: 0px 50px 30px 30px;
+            margin-right: 10px;
+            font-size: 28px;
+            position: relative;
+        }
+
+        .chatbox {
+            float: right;
+            width: 30px;
+            height: 30px;
+        }
+
+        .bottom_text {
+            font-size: 12px;
+            padding: 10px 10px;
+            position: relative;
+        }
+
+        .lower_header>.mph {
+            display: inline-block;
+            border-right: 2px;
+            border-right-style: solid;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .lower_header>.Range {
+            display: inline-block;
+            border-right-style: solid;
+            border-left: 2px;
+            position: relative;
+        }
+
+        .lower_header>.DualMoter {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .OrderNow {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 20px;
+            border: 4px solid white;
+            border-radius: 20px;
+            width: 150px;
+            background: transparent;
+            text-align: center;
+            position: relative;
+            vertical-align: super;
+        }
+
+        .OrderNow:hover {
+            color: grey;
+            background: white;
+            cursor: pointer;
+        }
+
+        .OrderNow2 {
+            display: inline-block;
+            font-size: 15px;
+            padding: 5px 5px 8px 8px;
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 150px;
+            background: transparent;
+            text-align: center;
+            margin-left: 25px;
+        }
+
+        .OrderNow2:hover {
+            color: white;
+            background: black;
+            cursor: pointer;
+        }
+
+        .arrow {
+            display: inline-block;
+            padding: 25px;
+        }
+        .arrow:hover {
+            cursor: pointer;
+        }
+        .plus-learn-more{
+            display: inline-block;
+            padding-right: 10px;
+            align-items: center;
+        }
+        .plus-learn-more:hover {
+            cursor: pointer;
+        }
+        .stars{
+            padding: 10px 10px 10px 10px;
+            font-weight: bold;
+            font-size: 20px;
+
+        }
+        .rating{
+            background-color: rgb(231, 225, 225);
+            padding: 20px 20px 20px 20px;
+            border-radius: 20px;
+            display: block;
+            height:auto;
+            width:max-content;
+
+        }
+        .Driver,.Passenger,.FrontSeat,
+        .RearSeat,.Rollover{
+            font-size: 14px;
+            padding:10px 5px 5px 5px;
+            text-align: left;
+            font-weight: bold;
+
+        }
+        .Frontal,.Side{
+            font-size: 11px;
+            font-weight: normal;
+        }
+        .chatbox:hover{
+            cursor: pointer;
+        }
+        .safety_text{
+            font-size: 16px;
+           
+        }
+        .built_for_safety
+        {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .safety_text,
+        .built_for_safety,
+        .explain_safety{
+            padding-bottom: 20px;
+        }
+    
+        .second_page_footer {
+            padding: 10px 10px;
+            position: relative;
+            top:165px;
+            display: inline-block;
+        }
+        .side{
+            padding: 20px 20px 20px 20px;
+            display: block;
+            height: 800px;
+            position:relative;
+            width:30%;            
+        }
+        .rating_heading,.stars{
+            text-align: center;
+            display: block;
+        }
+        .learn{
+            display: inline-block;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+        .plus_png{
+            vertical-align:middle
+        }
+        .rating5stars
+        {
+            display: block;
+            padding-left: 60px;
+            float:right;
+        }
+        .container_side_bar_2{
+            float:left;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <header>
+            <nav id="navbar">
+                <div class="logo">
+                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 35' preserveAspectRatio='xMidYMid Meet'
+                        width='120' height='30'>
+                        <path class='tds-icon-fill--primary'
+                            d='M0 .1a9.7 9.7 0 007 6.93h10.93l.56.22v27.58h6.82V7.29l.62-.22h10.94a9.82 9.82 0 007-6.93V.07H0V.1zM238.61.06h-6.8v34.85h31.14a9.68 9.68 0 005.94-6.86h-30.3l.02-27.99zm-52.33 6.86c3.62-1 6.66-3.82 7.39-6.88l-38.1.06v20.55h31.17v7.23h-24.46a13.6 13.6 0 00-8.71 7h39.89V13.81H162.3V6.92h23.98zm116.17 27.97h6.76V20.87h24.58v14.02h6.75V13.87l-38.09-.04zM85.35 7h26a9.57 9.57 0 007.05-7H78.3a9.61 9.61 0 007.05 7zm0 13.77h26a9.59 9.59 0 007.05-7H78.3a9.63 9.63 0 007.05 7zm0 14.14h26a9.59 9.59 0 007.05-7H78.3a9.62 9.62 0 007.05 7zM308.46 7.02h26a9.58 9.58 0 007.06-7h-40.11a9.59 9.59 0 007.05 7z'
+                            fill='#fff' /></svg>
+                    </svg>
+                </div>
+
+                <div class="header_center">
+                    <div class="model_s"><span>MODEL S</span></div>
+                    <div class="model_3"><span>MODEL 3</span></div>
+                    <div class="model_x"><span>MODEL X</span></div>
+                    <div class="model_y"><span>MODEL Y</span></div>
+                    <div class="solar_roof"><span>SOLAR ROOF</span></div>
+                    <div class="solar_panels"><span>SOLAR PANELS</span></div>
+                </div>
+                <div class="right-navigation">
+                    <span class="hamburger"><img src="/CSS/Tesla/hambu.png" alt="Menu"></img></span>
+                    <div class="sign_in"><span>SIGN IN</span></div>
+                    <div class="shop"><span>SHOP</span></div>
+                </div>
+            </nav>
+        </header>
+        <div class="header">Model 3</div>
+        <ul class="side_bar">
+            <!-- <li class="Model3"><span class="model3_tooltiptext">MODEL3</span></li><br> -->
+            <li class="Model3"><span class="model3_tooltiptext">MODEL3</span></li>
+            <li class="Safety"><span class="safety_tooltiptext">SAFETY</span></li>
+            <li class="Performance"><span class="performance_tooltiptext">PERFORMANCE</span></li>
+            <li class="All-WheelDrive"><span class="allwheeldrive_tooltiptext" data-balloon-length= "large">ALL_WHEEL_DRIVE</span></li>
+            <li class="Range"><span class="range_tooltiptext">RANGE</span></li>
+            <li class="AutoPilot"><span class="autopilot_tooltiptext">AUTOPILOT</span></li>
+            <li class="Interior"><span class="interior_tooltiptext">INTERIOR</span></li>
+            <li class="Specs"><span class="specs_tooltiptext">SPECS</span></li>
+            <li class="order"><span class="order_tooltiptext">ORDER</span></li>
+        </ul>
+        <footer class="lower_header">
+            <div class="mph"><i class="fas fa-tachometer-alt"></i><span>&nbsp;3.2S&nbsp;&nbsp;</span>
+                <div class="bottom_text">From 0-60 mph&nbsp;</div>
+            </div>
+            <div class="Range"><span>322mi&nbsp;&nbsp;</span>
+                <div class="bottom_text">Range&nbsp;</div>
+            </div>
+            <div class="DualMoter"><span>AWD&nbsp;</span>
+                <div class="bottom_text">Dual Moter&nbsp;</div>
+            </div>
+            <btn class="OrderNow">Order Now</btn>
+            <div class="chatbox"><i class="fas fa-comment-alt"></i></div><br>
+            <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+        </footer>
+    </div>
+    <div class="container">
+        <div class="main3"></div>
+        <div id="side2">
+            <div class="logo">
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 35' preserveAspectRatio='xMidYMid Meet'
+                    width='100' height='35'>
+                    <path class='tds-icon-fill--primary'
+                        d='M0 .1a9.7 9.7 0 007 6.93h10.93l.56.22v27.58h6.82V7.29l.62-.22h10.94a9.82 9.82 0 007-6.93V.07H0V.1zM238.61.06h-6.8v34.85h31.14a9.68 9.68 0 005.94-6.86h-30.3l.02-27.99zm-52.33 6.86c3.62-1 6.66-3.82 7.39-6.88l-38.1.06v20.55h31.17v7.23h-24.46a13.6 13.6 0 00-8.71 7h39.89V13.81H162.3V6.92h23.98zm116.17 27.97h6.76V20.87h24.58v14.02h6.75V13.87l-38.09-.04zM85.35 7h26a9.57 9.57 0 007.05-7H78.3a9.61 9.61 0 007.05 7zm0 13.77h26a9.59 9.59 0 007.05-7H78.3a9.63 9.63 0 007.05 7zm0 14.14h26a9.59 9.59 0 007.05-7H78.3a9.62 9.62 0 007.05 7zM308.46 7.02h26a9.58 9.58 0 007.06-7h-40.11a9.59 9.59 0 007.05 7z' />
+                </svg>
+            </div>
+            
+            <div class="side">
+                <div calass="safety_text">Safety</div>
+                <div class="built_for_safety">Built for Safety</div>
+                <p class="explain_safety">
+                    Safety is the most important part of the overall Model 3 design. The metal structure is a
+                        combination of aluminum and steel, for maximum strength in every area. In a roof-crush test,
+                        Model 3 resisted four times its own mass, even with an all-glass roof: that's the same weight as
+                        two full-grown African elephants.</p>
+                <div class="rating">
+                    <div class="stars">5-Star Overall NHTSA <div class="rating_heading">Rating</div></div>
+                    <div class="table_rating">
+                        <div class="Driver"><span class="driver_text">Driver</span><span class="rating5stars">★ ★ ★ ★ ★</span>
+                        <div class="Frontal">Frontal</div>
+                        </div>
+                        <div class="Passenger"><span class="passenger_text">Passenger</span><span class="rating5stars">★ ★ ★ ★ ★</span>
+                        <div class="Frontal">Frontal</div>
+                        </div>
+                        <div class="FrontSeat"><span class="front_seat_text">Front Seat</span><span class="rating5stars">★ ★ ★ ★ ★</span>
+                        <div class="Side">Side</div>
+                        </div>
+                        <div class="RearSeat"><span class="rear_seat_text">Rear Seat</span><span class="rating5stars">★ ★ ★ ★ ★</span>
+                        <div class="Side">Side</div>
+                        </div>
+                        <div class="Rollover">Rollover<span class="rating5stars">★ ★ ★ ★ ★</span></div>
+                    </div>
+                </div>
+                <div class="second_page_footer">
+                    <btn class="plus-learn-more"><img class ="plus_png" src="../Tesla/plus.png" ></img><span class="learn">LEARN MORE</span></btn>
+                    <btn class="OrderNow2">Order Now</btn>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

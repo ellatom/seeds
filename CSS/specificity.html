@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul#summer-drinks li {
+        font-weight: normal;
+        font-size: 15px;
+        color: blue;
+      }
+      .favorite {
+        color: red;
+        font-weight: bold;
+      }
+      html body div#container ul#summer-drinks li.favorite a[target] {
+        font-size: 20rem;
+      }
+​
+      /*
+      Point system:
+      0,0,0,0
+​
+    style attribute
+    1,0,0,0
+​
+    ID
+    0,1,0,0
+​
+    class,pseudo class, attribute
+    0,0,1,0
+    example:
+    .favorite, a:link, a[target]
+​
+    Elements
+    0,0,0,1
+    example:
+    li
+​
+​
+    */
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul id="summer-drinks">
+        <li class="favorite"><a target="blank" href="#">hello</a>Coca Cola</li>
+        <li>Vodka</li>
+        <li>Margarita</li>
+      </ul>
+    </div>
+  </body>

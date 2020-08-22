@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side_bar_dissappear</title>
+    <style>
+
+        /* Control the left side */
+        .split.left {
+        left: 0;
+        background-color: #111;
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        }
+
+        /* Control the right side */
+        .split.right {
+        right: 0;
+        background: url('https://source.unsplash.com/weekly?water') center center/cover;
+        height: 100%;
+        width: 80%;
+        position: fixed;
+        padding:4rem 4rem 4rem 4rem;
+        }
+      
+        @media(max-width: 500px)
+        {
+            .split.left {
+            display: none;
+            }
+            .split.right {
+            width: 100%;
+            margin: 2rem 2rem 2rem 2rem;
+            font-size: 0.9rem;
+            }
+        }  
+    </style>
+</head>
+<body>
+    <div class="split left"></div>
+    <div class="split right"><header>
+        <h1>Welcome to Ella Website</h1>
+        <p>Under construction-Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt et, deserunt itaque rem fugiat
+            dolore omnis animi possimus consequuntur distinctio reprehenderit sunt voluptatum, placeat mollitia quas nam
+            odit eos est, officiis iste dolorum in. Mollitia culpa nihil asperiores quae.</p>
+        <a href="#" class="btn">Find out more</a>
+    </header></div>
+</body>
+</html>

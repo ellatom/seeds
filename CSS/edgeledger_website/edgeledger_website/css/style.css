@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url("../css/norm.css");
+:root{
+    --animate-speed: 1s;
+    --secondary-color:#73d9e0;
+    --a-color:#333;
+    --meter-color:black;
+    --font-color:white;
+    --border-color:white;
+    --side-color: rgb(82, 76, 76);
+    --navbar-color:#333;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:var(--navbar-color);
+    color:var(--font-color);
+    opacity: 0.8;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    padding: 0 30px;
+    transition: 0.5s;
+}
+
+.navbar.top {
+    background: transparent;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px 40px;
+    margin: 0 5px;
+    position:relative;
+}
+a[href="#home"],
+a[href="#about"],
+a[href="#hobbies"],
+a[href="#contact"]{
+    display: flex;
+    position: relative;
+    padding-top: 30px;
+    line-height: 1;
+}
+
+a[href="#home"]::before,
+a[href="#about"]::before,
+a[href="#hobbies"]::before,
+a[href="#contact"]::before
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background:var(--secondary-color);
+    transition: all 0.5s;
+    left: 0px;
+    top: 0px;
+}
+
+a[href="#home"]::after,
+a[href="#about"]::after,
+a[href="#hobbies"]::after,
+a[href="#contact"]::after
+
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: var(--secondary-color);
+    transition: all 0.5s;
+    right: 0px;
+    bottom: 0px;
+}
+
+a[href="#home"]:hover::before, a[href="#home"]:hover::after,
+a[href="#about"]:hover::before, a[href="#about"]:hover::after,
+a[href="#hobbies"]:hover::before, a[href="#hobbies"]:hover::after,
+a[href="#contact"]:hover::before, a[href="#contact"]:hover::after
+{
+    opacity: 1;
+    width: 100%;
+}
+
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar .logo {
+    font-weight: 400;
+}
+
+/* Header */
+.home__page {
+    background: url('../images/home/owl.jpg') no-repeat center center/cover;
+    height: 100vh;
+    width: 100wh;
+    
+    position: relative;
+    color:var(--font-color);
+}
+
+.home__page .home__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 1.25rem;
+}
+
+.home__page .home__content h1 {
+    font-size: 3.43rem;
+}
+
+.home__page .home__content p {
+    font-size: 1.43rem;
+    max-width: 37.5rem;
+    margin: 1.25rem 0 1.875rem;
+}
+
+.home__page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.home__page * {
+    z-index: 10;
+}
+/*About*/
+.section{
+    display: block;
+    position: relative;
+}
+.details_container{
+    display:flex;
+}
+.details{
+    flex:1;
+}
+.my_photo>img{
+    border-radius: 50%;
+}
+.flex-container {
+    display: flex;
+    height: 100vh;
+}
+.left-side{
+    flex:1;
+}
+.my_photo.img{
+    max-width:50%;
+}
+.left-side:first-child{
+    flex-grow:1;
+}
+.left-side:nth-child(2){
+    flex-grow:3
+}
+
+.left-side:nth-child(3){
+    flex-grow: 3;
+}
+
+.left-side:nth-child(4){
+    flex-grow: 3;
+}
+
+.right-side, .left-side{
+    flex:1;
+    padding: 1.25rem 1.25rem;
+    background-color:var(--side-color);
+}
+.right-side__education,.right-side__languages, .skills,.details,
+.my_photo
+{
+    list-style: none;
+    color:var(--font-color);
+    border: 0.125rem dotted var(--border-color);
+}
+.my_photo>img{
+    width: 15.62rem;
+    height:15.62rem;
+}
+
+.right-side__education li:nth-child(1) > span,.right-side__languages>li:first-child,
+.skills>li:first-child,.details>li:first-child
+{
+    font-size: 1.5rem;
+    color:inherit;
+}
+
+.right-side__education> li,.right-side__languages>li,.skills>li,.details>li{
+    color:inherit;
+    padding:1.875rem 1.875rem;
+}
+.skills__meter { 
+    height: 8px;
+    border-radius: 5px;
+    position: relative;
+    background:var(--meter-color);
+    overflow: hidden;
+}
+
+.skills__meter span {
+    display: block;
+    height: 100%;
+}
+
+.progress_python{
+    background-color: var(--secondary-color);
+    animation: progressBar_python 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+.progress_java {
+    background-color: var(--secondary-color);
+    animation: progressBar_java 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+.progress_nodejs{
+    background-color: var(--secondary-color);
+    animation: progressBar_nodejs 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+.progress_html{
+    background-color: var(--secondary-color);
+    animation: progressBar_html 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+.progress_db {
+    background-color: var(--secondary-color);
+    animation: progressBar_db 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+.home__content > h1 {
+    transform: translateY(-1200px);
+    animation: welcome var(--animate-speed) forwards ease-in;
+}
+
+
+.home__content > p {
+    transform: translateX(-1800px);
+    animation: welcome__text var(--animate-speed) forwards ease-in 1s;
+}
+
+@keyframes welcome {
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes welcome__text {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+/*progress meter*/
+
+@keyframes progressBar_python {
+0% { width: 0; }
+100% { width: 80%; }
+}
+@keyframes progressBar_java {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+@keyframes progressBar_nodejs {
+    0% { width: 0; }
+    100% { width: 20%; }
+}
+@keyframes progressBar_html {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
+@keyframes progressBar_db {
+    0% { width: 0; }
+    100% { width: 80%; }
+    }
+/* Mobile */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: 7.5rem;
+        padding: 1.25rem;
+    }
+
+    .navbar a {
+        padding: 0.625rem 0.625rem;
+        margin: 1.25rem 0.187rem;
+    }
+
+    .flex-items {
+        flex-direction: column;
+    }
+
+    .flex-columns .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+     .flex-container{
+        flex-direction: column;
+        flex:100%;
+        max-width: 100%;
+        max-height: 100%;
+    }   
+    .my_photo{
+        display: none;
+    }
+}

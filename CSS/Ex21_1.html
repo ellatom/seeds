@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+        }
+
+        .box1,.box2,.box3,.box4 {
+            text-decoration: none;
+            border: 3px solid black;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            line-height: 80px;
+            width:300px;
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+            margin: 4px 2px;
+            color: black;
+            margin: 10px 10px;
+        }
+        .box1::before{
+
+            content: "YEAH";
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            transform: translateY(-100%);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s;
+        }
+        .box1:hover::before{
+            transform: translateY(0);
+        }
+        .box2::before{
+            content: "";
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            transform: translate(-100%);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 1s;
+            z-index: -1;
+        }
+        .box2:hover::before{
+            transform: translateY(0);
+        }
+        .box2:hover{
+            color:white;
+        } 
+        .box3::before{
+            content: "";
+            overflow: hidden;
+            position: absolute;
+            top:0;
+            left:0;
+            height: 150%;
+            width: 100%;
+            background-color: yellow;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(-45deg) translateY(-300px);
+            transition: transform 1.3s;
+            z-index: -1;
+        }
+        .box3:hover::before{
+            transform: translateY(0);
+        }
+        .box4::before{
+            content: "Scale&Opacity";
+            position: absolute;
+            top:0;
+            left:0;
+            height: 80px;
+            width: 300px;
+            background-color: black;
+            opacity: 0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 2s ease-in;
+            transform: scale(3);
+            color:white;
+        }
+        .box4:hover::before{
+            transform: scale(1);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+        <a class="box4" href="#">Scale&Opacity</a>
+        <a class="box3" href="#">Rotate</a>
+        <a class="box2" href="#">TranslateX</a>
+        <a class="box1" href="#">TranslateY</a>
+    </div>
+</body>
+</html>

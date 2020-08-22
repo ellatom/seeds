@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        :root{
+            --color-font:white;
+        }
+        *,
+        *::before,
+        *::after{
+            padding: 0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+
+        #localswitch-container{
+            display:flex;
+            top:0;
+            position:fixed;
+            height: 70px;
+            color:var(--color-font);
+            width: 100%;
+            font-size: 17px;
+            background:#444;
+            pointer-events:auto;
+            z-index: 10;
+        }
+        .localswitch__content{
+            display: inline-flex;
+            align-items: center;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .localswitch__content__lefttext{
+            font-size: 12px;
+            line-height:1.5;
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-block;
+            flex:1;
+        }
+        .localswitch__content__actions{
+            position: relative;
+            display: inline-flex;
+            flex:1;
+        }
+        #localswitch__content__actions_dropdown{
+            flex:1;
+            background-color: #444;
+            border: 1px solid #d4cece;
+            position:relative;
+            line-height:48px;
+        }
+        .localswitch__content__actions_dropdown_select{
+            text-align: center;
+            background-color: #242424;
+            border-radius: 4px;
+            padding: 0 15px;
+            height: 26px;
+            /* line-height: 26px; */
+            width: 100%;
+        }
+        #localswitch__content__actions_continue{
+            height:26px;
+            line-height: 35px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left:17px;
+            font-size: 17px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            text-align: center;
+            background-color: #0070c9;
+            border-color: #07c;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #localswitch__content__actions_continue:hover{
+            opacity: 80%;
+        }
+        .localswitch__content__actions_dropdown_close{
+            margin-left: 30px;
+            margin-top: 16px;
+            color: #999; 
+        }
+        #navbar{
+            position: fixed;
+            width: 100%;
+            right: 0;
+            left: 0;
+            z-index: 9999;
+            display: block;
+            margin: 0;
+            height: 48px;
+            line-height:48px;
+            font-size: 17px;
+            text-align: left;
+            top:70px;
+            padding: 0 22px;
+            z-index: 2;
+            color:#bdb8b8;
+            background-color: #181818;
+        }  
+        #navbar>ul
+        {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            vertical-align: bottom;
+            
+        }
+        #navbar>ul>li
+        {
+            flex:1;
+            display: inline-block;
+            position: relative;
+            height: 48px;
+            z-index: 1;
+        }
+        #navbar>ul>li:hover
+        {
+            color: white;
+        }
+        .page1{
+            background: url('hero__dvsxv8smkkgi_mediumtall.jpg') no-repeat center center/cover;
+            height:90vh;
+            text-align:center;
+            position: relative;
+            top:118px;
+        }
+        .COVID19{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+            text-align: center;   
+             
+        }
+        .COVID19_text {
+            display: block;
+            color: white;
+            background-color: blue;
+            height:40px;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        .COVID19_text >i{
+            padding-left: 10px;
+        }
+        #shoponline{
+            display: block;
+            color: black;
+            background-color: white;
+            height:40px;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        .page1 h3{
+            color: #A28C8B; 
+            padding-bottom: 20px;
+        }
+        .page1 h1,.page1 h2{
+            color: white;
+        }
+
+        .page1 h1{
+            padding-top: 60px;
+            padding-bottom: 10px;
+        }
+        .page1 h3{
+            padding-top: 10px;
+        }
+        .page1 .COVID19_text a,.page1 .COVID19_text i{
+            color:white;
+            padding: 0 20px;
+            text-decoration: none;
+        }
+        .page1 #shoponline a,.page1 a>i{
+            color:blue;
+            padding: 0 20px;
+            text-decoration: none;
+        }
+        .page1x.learnandbuy{
+            color: rgb(42, 42, 233);
+            text-decoration: none;
+        }
+
+        .page2{
+            background: url(page2_mediumtall.jpg) no-repeat  center center/cover;
+            height:80vh;
+            color:black;
+            display: flex;
+            text-align: center;
+            display: block;
+            position: relative;
+        }
+        .page2 h3{
+            color: #A28C8B; 
+        }
+        
+        .page2 h1,.page2 h2,.page2 h3{
+            padding: 20px 0;
+
+        }
+        .page2 a,.page2 a>i{
+            color:blue;
+            padding: 0 20px;
+            text-decoration: none;
+        }
+
+        .page3{
+            background: url(page3.jpg) no-repeat  center center/cover;
+            height:80vh;
+            color:black;
+            display: flex;
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .page3__watchlater{
+            position: relative;
+            text-decoration: none;
+            display: block;
+
+            
+        }
+
+    </style>
+</head>
+<body >
+
+    <aside id="localswitch-container">
+        <div class="localswitch__content">
+            <div class="localswitch__content__lefttext">
+            Choose another country or region to see content specific to your location.
+            </div>
+            <div class="localswitch__content__actions">
+                    <div class="localswitch__content__actions">
+                        <div id="localswitch__content__actions_dropdown">
+                            <div id="localswitch__content__actions_dropdown_select"><img src="israel.png">Israel
+                                <span id="localswitch__content__actions_dropdown_options"><i class="fas fa-angle-down"></i></span>
+                            </div>
+                        </div>
+                        <a href="https://www.apple.com/il/" id="localswitch__content__actions_continue" role="button">
+                            Continue</a>
+                        <div id="localswitch__content__actions_dropdown_close">
+                            X
+                        </div>        
+                    </div>
+                    
+            </div>
+        </div>
+    </aside>
+    
+    <nav id="navbar">
+        <ul>
+            <li><i class="fab fa-apple"></i></li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>iPhone</li>
+            <li>Watch</li>
+            <li>TV</li>
+            <li>Music</li>
+            <li>Support</li>
+            <li><i class="fas fa-search"></i></li>
+            <li><i class="fas fa-shopping-bag"></i></li>
+        </ul>
+    </nav>
+    <div class="page1">    
+        <div id="COVID19">
+            <a href="#" class="COVID19_text">Evaluate COVID‑19 symptoms  and understand next steps<i class="fas fa-angle-right"></i></a>
+        </div>
+        <div id="shoponline">
+            <a href="#"> Shop online</a> and get free, no‑contact delivery, Specialist help, and more.
+        </div>
+
+        <h1>iPhone SE</h1>
+        <h2>Lots to love.Less to spend.</h2>
+        <h2>Starting at $399.</h2>
+        <h3>From $9.54/mo. or $229 with trade-in.</h3>
+        <div class="learnandbuy">
+            <a href="#" >Learn more<i class="fas fa-angle-right"></i></a><a href="#" >Buy<i class="fas fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div  class="page2">
+        <h1>iPhone 11</h1>
+        <h2>Just the right amount of everything.</h2>
+        <h3>From $19.95/mo. or $479 with trade-in.</h3>
+        <a href="#" >Learn more<i class="fas fa-angle-right"></i></a><a href="#" >Buy<i class="fas fa-angle-right"></i></a>
+    </div>
+    <div  class="page3">
+        <a href="#" class="page3__watchlater">Watch later <i class="fas fa-chevron-circle-right"></i></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4,auto);
+            grid-template-areas: 'area1 area1 area1 area1'
+                                 'area2 area3 area3 area4'
+                                 'area5 area5 area5 area5';
+        }
+    
+        .item {
+            padding: 3rem;
+            border: #ccc 1px solid;
+            border-radius: 30px;
+            background: #f4f4f4;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color:white;
+            /* text-align: center; */
+        }
+        .item:nth-child(1){
+            grid-area: area1;
+            background-color: red;
+        }
+
+        .item:nth-child(2){
+            grid-area: area2;
+            background-color: blue;
+        }
+        .item:nth-child(3){
+            grid-area: area3;
+            background-color: green;
+        }
+        .item:nth-child(4){
+            grid-area: area4;
+            background-color: purple;
+        }
+        .item:nth-child(5){
+            grid-area: area5;
+            background-color: yellow;
+        }
+        @media(max-width: 1024px){
+            .grid {
+                grid-template-areas: 'area1 area1 area1 area1'
+                                    'area2 area3 area3 area3'
+                                    'area4 area4 area4 area4'
+                                   'area5 area5 area5 area5';
+                }
+        }
+        @media(max-width: 768px){
+            .grid {
+                grid-template-areas: 'area1 area1 area1 area1'
+                                    'area2 area2 area2 area2'
+                                    'area3 area3 area3 area3'
+                                    'area4 area4 area4 area4'
+                                   'area5 area5 area5 area5';
+                }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item">Header</div>
+        <div class="item">Sidebar</div>
+        <div class="item">Content<br>More content than we had before so this<br>column is now quite tall</div>
+        <div class="item">Sidebar2</div>
+        <div class="item">Footer</div>
+</body>
+</html>

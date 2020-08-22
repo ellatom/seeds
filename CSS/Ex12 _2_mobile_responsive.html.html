@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Media Queries</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: gray;
+            color:white;
+            text-align: center;
+            padding-top:100px;
+        }
+        .box{
+            background-color: black;
+            color: white;
+            width: 100px;
+            padding:40px 40px 40px 40px;
+            display: inline-block;
+        }
+        
+        /*smartphones*/
+        @media(max-width: 500px)
+        {
+            body{
+                background: red;
+            }
+            .box{
+            display:block;
+            }
+        }
+        
+        /*tablet*/
+        @media(min-width:501px)
+        {
+            body{
+                background: blue;
+            }
+            .box{
+            display:inline-block;
+            margin: 0 auto;
+            }
+        }
+
+
+    </style>
+    <!-- <link rel="stylesheet" media="screen and (max-width:768px)"
+    href="mobile_12.css"> -->
+</head>
+<body>
+    <div class="box">
+        First Item<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque et, animi eos
+         molestiae quibusdam magnam saepe, deserunt sapiente est nisi numquam? Laudantium, 
+         suscipit molestias incidunt facilis esse quidem obcaecati assumenda a magni, iure 
+         quia necessitatibus tenetur ducimus maxime commodi modi!
+    </div>
+    <div class="box">
+        Second Item<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque et, animi eos
+         molestiae quibusdam magnam saepe, deserunt sapiente est nisi numquam? Laudantium, 
+         suscipit molestias incidunt facilis esse quidem obcaecati assumenda a magni, iure 
+         quia necessitatibus tenetur ducimus maxime commodi modi!
+    </div>
+    <div class="box">
+        Third Item<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque et, animi eos
+         molestiae quibusdam magnam saepe, deserunt sapiente est nisi numquam? Laudantium, 
+         suscipit molestias incidunt facilis esse quidem obcaecati assumenda a magni, iure 
+         quia necessitatibus tenetur ducimus maxime commodi modi!
+    </div>
+    <div class="box">
+        Fourth Item<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque et, animi eos
+         molestiae quibusdam magnam saepe, deserunt sapiente est nisi numquam? Laudantium, 
+         suscipit molestias incidunt facilis esse quidem obcaecati assumenda a magni, iure 
+         quia necessitatibus tenetur ducimus maxime commodi modi!
+    </div>
+</body>
+</html>
