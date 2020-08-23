@@ -178,6 +178,7 @@ console.log(basicOp('/', 49, 7));
 const nb_year = (p0, percent, aug, p) => {
     let total = p0 + p0 * (percent / 100) + aug;
     let counter = 1;
+    if(percent==0 && aug==0) return "no growth at all";
     while (total < p) {
         total = total + total * (percent / 100) + aug;
         counter++;
@@ -283,8 +284,8 @@ const getTribonacci = (signature, n) => {
 
     if (n === 0) return [];
     if (n === 1) return signature[0];
-    if (n === 2) return signature[1];
-    if (n === 3) return signature[2];
+    if (n === 2) return signature[0]+","+signature[1];
+    if (n === 3) return signature[0]+","+signature[1]+","+signature[2];
 
     while (counter != n) {
         first = second;
@@ -314,7 +315,7 @@ console.log(trimSting("stuck"))
 // repeatStr(6, "I") // "IIIIII"
 // repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
 const repeatStr = (str, times) => {
-    return str.repeat(times);
+    return str.repeat(times); 
 }
 console.log(repeatStr("Hello", 6));
 
@@ -391,7 +392,7 @@ const getInitials = (str) => {
         return "String Empty";
 
     let arrName = str.split(" ");
-    return arrName[0].charAt(0) + "." + arrName[1].charAt(0);
+    return arrName[0].charAt(0) + "." + arrName[1].charAt(0);//~arrName[1][0]
 };
 
 console.log(getInitials(str));
@@ -428,7 +429,7 @@ console.log(muskify(strToMusk));
 // Simple, given a string of words, return the length of the shortest word(s).
 // String will never be empty and you do not need to account for different data types.
 
-const strWords="Always look on the brigth side of life";
+const strWords="Always look on the brigth side of life";//option split +
 const shortestWord=(strWords)=>
 {
     let newStr=strWords.split(" ");
@@ -469,7 +470,7 @@ const mumbling=(mumbStr)=>
     {
         while(i<=arrMumb.indexOf(element)+1)
         {
-                temp += element.repeat(i)+"-";
+                temp += element.repeat(1).toUpperCase()+element.repeat(i-1)+"-";
                 i++;
         }
     });
