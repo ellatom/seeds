@@ -529,7 +529,7 @@ console.log(countDup(word));
 // a = "abcdefghijklmnopqrstuvwxyz"
 // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-let a ="xyaabbbccccdefww";
+let a ="xyaabbbccccdefww";//check edge case
 let b ="xxxxyyyyabklmopq";
 
 const longest=(a,b)=>
@@ -585,16 +585,16 @@ console.log(isIsogram(word1));
 
 let arraFilter=["ella","red"];
 
-function bFilter(item)
+function bFilter(item)//can add until 3 params
 {
-    return item == "ella";
+    return item == "ella" ;
 }
 function myFilter(array, callback)
 {
     const results = [];
 
     for (let i = 0; i < array.length; i++) {
-        if (callback(array[i]))
+        if (callback(array[i],i,array))
             results.push(array[i]);
     }
 
