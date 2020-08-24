@@ -1,0 +1,93 @@
+<!-- // Create a webpage that has some text and two buttons with ‘+’ and ‘-‘
+// Clicking the ‘+’ button should increase the text’s font-size and clicking the ‘-‘
+// should decrease it.
+// Limit the font size to be between 6px and 100px. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: black;
+        }
+        .setFont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+        }
+        #text{
+            font-size: 60px;
+            color: white;
+            padding:60px 60px;
+
+        }
+        .btn__container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+        }
+        #btn__container__plus{
+            background-color: red;
+            height: 40px;
+            width: 200px;
+            border-radius: 10px;
+            margin-right: 20px;
+            font-size: 30px;
+        }
+        #btn__container__plus:hover,
+        #btn__container__minus:hover
+        {
+            cursor: pointer;
+        }
+        #btn__container__minus{
+            background-color: green;
+            height: 40px;
+            width: 200px;
+            border-radius: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+        <div class="setFont">
+            <p id="text">Click on + button to maximize text, Click on - button to minimize text</p>
+            <div class ="btn__container">
+                <button id="btn__container__plus" onclick="increaseFont()" >
+                    +
+                </button>
+                <button id="btn__container__minus" onclick="decreaseFont()">
+                    -
+                </button>
+            </div>
+        </div>
+    <script>
+
+        function increaseFont(){
+            txt = document.getElementById("text");
+            var style = window.getComputedStyle(txt).getPropertyValue('font-size');
+            var currentSize = parseFloat(style); 
+            if(currentSize!=100)
+                txt.style.fontSize = (currentSize + 4) + 'px';
+            if(currentSize==100)
+                alert("You can't increase more than 100px")
+        };
+        function decreaseFont(){
+            txt = document.getElementById("text");
+            var style = window.getComputedStyle(txt).getPropertyValue('font-size');
+            var currentSize = parseFloat(style); 
+    
+            if(currentSize!=6)
+                txt.style.fontSize = (currentSize - 4) + 'px';
+            if(currentSize==6)
+                alert("You can't decrease more than 20px")
+        };
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- // Create a webpage that has part of an application process for a job.
+// This page should have a text area field and a button. Your user must enter at
+// least 100 characters before clicking the button. If he didn’t, please give him
+// the appropriate message. (using alert is forbidden) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .positionInterest{
+            display: flex;
+            flex-direction: column;
+            padding:10px 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .positionInterest_container{
+            display: flex;
+            flex-direction: column;
+            padding:10px 0;
+        }
+        p{
+            font-size:20px;
+            font-weight: bold;
+        }
+        textarea{
+            height: 200px;
+            width:450px;
+        }
+        button{
+            margin-top:5px;
+            width:120px;
+            padding:10px 5px;
+            font-size: 16px;;
+        }
+        #error{
+            display: none;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="positionInterest">
+        <div class="positionInterest_container">
+            <p>Why are you interested in this position?</p>
+            <textarea id="positionArea"></textarea>
+            <div>
+                <button id="submitHere" onclick="isMoreThan100Char()">Click here!</button>
+                <span id="error">You must enter at least 100 characters</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        //document.getElementById("submitHere").addEventListener("click",isMoreThan100Char);
+
+        function isMoreThan100Char(e){
+            const txt = document.getElementById("positionArea");
+            const errorElement = document.getElementById("error");
+
+            if(txt.value.length<100)
+                errorElement.style.display = "inline";
+            else
+                errorElement.style.display = "none";
+        }
+    </script>
+</body>
+</html>
