@@ -28,7 +28,10 @@
         }
         .page1__left_panel_2{
             display: none;
+            justify-content: center;
+            align-items: center;
             flex:6;
+            background:purple;
         }
         .main__btnStart{
             display: block;
@@ -83,9 +86,33 @@
         let btnStart= document.querySelector(".main__btnStart");
         btnStart.addEventListener("click",startGame);
         function startGame(event){
-            let page1= document.querySelector(".page1__left_panel");
-            page1.style.display = 'none';
+            hidePreviousPage1();
+            createNewWorld();//full picture matrix
+            chooseTool();//options-the background becomes blue:shovel-land,pickaxe-for stone,axe-tree green&&tree root=trunk
+            useToolToRemoveBlock();//tool can be used,tool cant be used depends on what block it can remove(red background if not)
+            // more than 1 block
+            addBlockToChosen();//
+            chooseBlockFromToolBar();//click it 
+            chooseSpotForBlock();//border is white size of block
+            placeBlock();//check if the spot not taken with another block the block has white border
+
+
         }
+        function hidePreviousPage1()
+        {
+            let page1__left_panel_1 = document.querySelector(".page1__left_panel_1");
+            let page1__left_panel_2 = document.querySelector(".page1__left_panel_2");
+            page1__left_panel_1.style.display = 'none';
+            page1__left_panel_2.style.transition='opacity 0.3s linear';
+            page1__left_panel_2.style.display = 'flex';
+        }
+        function createWorld(){
+            for(let i=0; i<15;i++)
+                for(let j=0;j<15;j++){
+                    
+                }
+        }
+
     </script>
 </body>
 </html>
