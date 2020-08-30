@@ -1,0 +1,73 @@
+<!-- // Create a webpage that has part of an application process for a job.
+// This page should have a text area field and a button. Your user must enter at
+// least 100 characters before clicking the button. If he didn’t, please give him
+// the appropriate message. (using alert is forbidden) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .positionInterest{
+            display: flex;
+            flex-direction: column;
+            padding:10px 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: green;
+        }
+        .positionInterest_container{
+            display: flex;
+            flex-direction: column;
+            padding:10px 0;
+        }
+        p{
+            font-size:20px;
+            font-weight: bold;
+            background-color: grey;
+        }
+        textarea{
+            height: 200px;
+            width:450px;
+        }
+        button{
+            margin-top:5px;
+            width:120px;
+            padding:10px 5px;
+            font-size: 16px;;
+        }
+        #error{
+            display: none;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="positionInterest">
+        <div class="positionInterest_container">
+            <p>How many husbands will you have?</p>
+            <div>
+                <button id="findOut">Click here!</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let husband='👨‍⚖️';
+        let btn= document.querySelector("button");
+        let div= document.querySelector("div");
+        let p = document.createElement('p');
+
+        btn.addEventListener('click',(event)=>
+        {
+            debugger;
+            let rand= Math.floor((Math.random()*4)+1);
+            p.innerHTML = husband.repeat(rand.toString());
+            div.append(p);
+            
+        });
+    </script>
+</body>
+</html>

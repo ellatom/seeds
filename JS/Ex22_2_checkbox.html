@@ -1,0 +1,38 @@
+<!-- Create a webpage that has a checkbox. If the checkbox is checked, make a
+photo appear. If it is not, make it disappear. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+    <style>
+        p{
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <input type="checkbox"> <p>If you check the checkbox the image will appear</p>  
+        </div>
+    </div>
+    <script>
+        let div= document.querySelector("div");
+        let img= document.createElement("img");
+        let input= document.querySelector("input");
+        let container= document.querySelector(".container");
+        
+        input.addEventListener('change', function() {
+            if(input.checked) {
+                img.src="lightOff.png";
+                container.append(img);
+            } else {
+                img.src="";
+            }
+        });
+
+    </script>
+</body>
+</html>

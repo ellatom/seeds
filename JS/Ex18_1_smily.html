@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smily</title>
+    <style>
+        .counterSmily{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            padding:7px 7px;
+        }
+        input{
+            padding:7px 7px;
+        }
+        /* p{
+            display:none;
+        } */
+    </style>
+</head>
+<body>
+    <div class="counterSmily">
+        <h4>How many smileys do you want to see?</h4>
+        <div>
+            <input type="text" id="counter" name="counter"></input>
+            <button>submit</button>
+        </div>
+    </div>
+    <script>
+        let smily='😋';
+        let textArea =document.querySelector("input");
+        let btn= document.querySelector("button");
+        let div= document.querySelector("div");
+        let p = document.createElement('p');
+
+        btn.addEventListener('click',(event)=>
+        {
+            
+            const textCountSmily = textArea.value;//convert str to int
+            if(!isNaN(textCountSmily)){
+                p.innerHTML = smily.repeat(textCountSmily);
+                div.append(p);
+            }
+            else
+                alert("Not a number");
+        });
+    </script>
+</body>
+</html>

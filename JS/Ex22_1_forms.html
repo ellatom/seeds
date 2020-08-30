@@ -1,0 +1,94 @@
+<!-- Create a webpage that has a form (asks the user for its name, age and email
+address) and when the user clicks submit, open a text window that writes all
+the information and ask for his confirmation. If he clicks on the confirm
+button, tell him “congratulations you successfully sent this form” if he clicks on
+change information, give him the possibility to change the information and ask
+again for his confirmation. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <style>
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightseagreen;
+        height: 100vh;
+        flex-direction: column;
+      }
+      form {
+        /* background-color: grey; */
+        color: black;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: fit-content;
+        padding: 20px 20px;
+        background-color: grey;
+        border-radius: 8px;
+        line-height: 40px;
+        margin-top: 40px;
+      }
+      input {
+        height: 30px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 10px;
+        font-size: 1rem;
+        border-radius: 8px;
+        background-color: lightblue;
+      }
+      label {
+        font-size: 1rem;
+      }
+      p {
+        color: red;
+        font-size: 1rem;
+        height: min-content;
+        justify-content: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" name="name" />
+        <label for="age">Age:</label>
+        <input type="number" name="age" />
+        <label for="email">Email:</label>
+        <input type="email" name="email" />
+        <button type="button">Submit</button>
+      </form>
+    </div>
+    <script>
+      let wrapper = document.querySelector(".wrapper");
+      let button = document.querySelector("button");
+      let inputName = document.querySelector("[name='name']");
+      let inputAge = document.querySelector("[name='age']");
+      let inputEmail = document.querySelector("[name='email']");
+      let p = document.createElement("p");
+
+      button.addEventListener("click", setConfirm);
+
+      function setConfirm(event) {
+
+        let result = confirm(`Name: '${inputName.value}' Age:'${inputAge.value}' Email:'${inputEmail.value}'  Do you confirm?`);
+        if (result === true) {
+          p.innerHTML = "congratulations you successfully sent this form";
+          wrapper.append(p);
+        } 
+        else{
+            p.innerHTML = "";
+        }
+        inputName.value="";
+        inputAge.value="";
+        inputEmail.value="";
+      }
+    </script>
+  </body>
+</html>

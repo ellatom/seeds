@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clock {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        height: 100vh;
+        color: greenyellow;
+        font-size: 10rem;
+        border:10px dotted greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock"></div>
+    <script>
+      function currentTime() {
+
+        let date = new Date();
+
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+
+        hours = updateTime(hours);
+        minutes = updateTime(minutes);
+        seconds = updateTime(seconds);
+
+        document.querySelector(".clock").innerHTML = hours + " : " + minutes + " : " + seconds;
+
+        let t = setInterval(function () {
+          currentTime();
+        }, 1000);
+      }
+      
+      function updateTime(digit) {
+        if (digit < 10) {
+            return "0" + digit;
+        }
+        else {
+            return digit;
+        }
+    }
+
+      currentTime();
+    </script>
+  </body>
+</html>

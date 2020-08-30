@@ -1,0 +1,66 @@
+<!-- Create a webpage that has an input field for the user’s age and a button.
+If the user enters a number above 18, make the text “you can drink appear”.
+If the user enters a number below 18, make the text “you’re too young”
+appear. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+      h4 {
+        margin-right: 10px;
+      }
+      input {
+        padding: 10px 10px;
+      }
+      button {
+        padding: 10px 10px;
+        margin-left: 10px;
+      }
+      p {
+        color: red;
+        display: block;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h4>What is your age insert the age?</h4>
+      <input type="text" id="age" name="age" />
+      <button>Submit</button>
+    </div>
+    <script>
+      let div = document.querySelector("div");
+      let container = document.querySelector(".container");
+      let txt = document.querySelector("#age");
+      let btn = document.querySelector("button");
+      let p = document.createElement("p");
+
+      btn.addEventListener("click", isMinor);
+
+      function isMinor(event) {
+        if (!isNaN(txt.value)) {
+          if (parseInt(txt.value) > 18) {
+            container.append(p);
+            p.innerHTML = "you can drink appear";
+          } else {
+            container.append(p);
+            p.innerHTML = "you’re too young";
+          }
+        } else {
+          container.append(p);
+          p.innerHTML = "you have entered not a number";
+        }
+      }
+    </script>
+  </body>
+</html>

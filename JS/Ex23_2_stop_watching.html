@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clock {
+        color: black;
+        font-size: 2rem;
+      }
+      button {
+        padding: 10px 60px;
+        background-color: hotpink;
+        font-size: 1rem;
+      }
+      .start:hover{
+        cursor: pointer;
+        opacity: 0.7;
+      }
+      .stop:hover{
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="stop">Pause</button>
+    <button class="start">Start</button>
+    <div class="clock"> </div>
+
+    <script>
+      let date = new Date();
+
+      let minutes = 0;
+      let seconds = 0;
+      let milliseconds = 0;
+      let t;
+
+      document.querySelector(".clock").innerHTML = 
+      (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
+       ":" +
+      (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") +
+       ":" +
+      (milliseconds > 9 ? milliseconds : "0" + milliseconds);
+      
+      let start=document.querySelector(".start");
+      let stop=document.querySelector(".stop");
+
+      start.addEventListener("click",doAdd);
+      stop.addEventListener("click",doStop);
+
+      function doStop()
+      {
+        clearTimeout(toStopTimeOut);
+      }
+      function doAdd() 
+      {
+        milliseconds++;
+        if (milliseconds >= 100) {
+            milliseconds = 0;
+          seconds++;
+          if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+          }
+        }
+
+        document.querySelector(".clock").innerHTML = 
+      (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
+       ":" +
+      (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") +
+       ":" +
+      (milliseconds > 9 ? milliseconds : "0" + milliseconds);
+
+      runWatch();
+      }
+
+      function runWatch() {
+        toStopTimeOut = setTimeout(doAdd, 10);
+      }
+      timer();
+
+
+    </script>
+  </body>
+</html>
