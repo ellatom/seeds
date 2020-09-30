@@ -36,7 +36,8 @@ function csvToJSON(csv){
     
             result.push(obj);
         }
-        return result; //JSON
+        jsonFormat=JSON.parse(JSON.stringify(result));
+        return jsonFormat; //JSON
     }
     catch(e)
     {
