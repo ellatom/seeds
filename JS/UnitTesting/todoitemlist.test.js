@@ -75,17 +75,17 @@ describe('toDo', () => {
                 expect(result).toEqual(expected);
             });
         });
-        describe('return All Items Desc By Mark', () => {
-            it('shouldnt return All Items Desc By Mark', () => {//positive flow
-                let item = { id: "1500", text: "go a", markedDone: true };
-                const result = toDoItemList.deleteItem(item);
-                console.log("result:" + result);
+//         describe('return All Items Desc By Mark', () => {
+//             it('shouldnt return All Items Desc By Mark', () => {//positive flow
+//                 let item = { id: "1500", text: "go a", markedDone: true };
+//                 const result = toDoItemList.deleteItem(item);
+//                 console.log("result:" + result);
 
-                const expected = false;
+//                 const expected = false;
 
-                expect(result).toEqual(expected);
-            });
-        });
+//                 expect(result).toEqual(expected);
+//             });
+//         });
 
     });
 });
